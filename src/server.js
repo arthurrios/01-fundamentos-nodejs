@@ -2,6 +2,19 @@ import http from 'node:http'
 import { json } from './middlewares/json.js'
 import { routes } from './routes.js'
 
+// Query Parameters: URL Stateful
+// Route Parameters: Identificação de recurso
+// Request Body: Envio de informações de um formulário (HTTPs)
+
+// http://localhost:3333/users?userId=1&name=Arthur
+
+// GET http://localhost:3333/users/1
+// DELETE http://localhost:3333/users/1
+
+// POST http://localhost:3333/users
+
+// Edição e remoção do usuário
+
 const server = http.createServer(async (req, res) => {
   const { method, url } = req
 
